@@ -21,40 +21,39 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-laptop"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>
-           <li class="nav-item">
+          
+
+
+          @foreach ($routes as $route)
+          @if (!$route['is_dropdown'])
+                <li class="nav-item">
+                  <a href="{{ route($route['route_name']) }}" class="nav-link {{ request()->routeIs($route['route_active']) ? 'active' : '' }}">
+                    <i class="nav-icon {{ $route['icon'] }}"></i>
+                      <p>{{ $route['label'] }}</p>
+                  </a>
+                </li>  
+          @else
+          <li class="nav-item {{ request()->routeIs($route['route_active']) ? 'menu-open' : ''}}">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-database"></i>
+              <i class="nav-icon {{ $route['icon'] }}"></i>
               <p>
-                Master Data
+                {{ $route['label'] }}
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
+              @foreach ($route['dropdown'] as $item)
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route($item['route_name']) }}" class="nav-link {{ request()->routeIs($item['route_active']) ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Kategori</p>
+                  <p>{{ $item['label'] }}</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Product</p>
-                </a>
-              </li>
+              </li>  
+              @endforeach
             </ul>
           </li>
-          
+          @endif
+          @endforeach
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
