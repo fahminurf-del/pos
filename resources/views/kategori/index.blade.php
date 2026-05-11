@@ -6,6 +6,14 @@
         <h4 class="card-title">Daftar Kategori</h4>
     </div>
     <div class="card-body">
+        @if ($errors->any())
+        <div class="alert alert-danger d-flex flex-column">
+        @foreach ($errors->all() as $error)
+            <small class="text-white my-2">{{ $error }}</small>
+        @endforeach
+        </div>
+            
+        @endif
         <div class="d-flex justify-content-end mb-2">
             <x-kategori.form-kategori />
         </div>
@@ -25,8 +33,11 @@
                         <td>{{ $item->nama_kategori }}</td>
                         <td>{{ $item->deskripsi }}</td>
                         <td>
-                            <div>
+                            <div class="d-flex align-items-center">
                                 <x-kategori.form-kategori :id="$item->id" />
+                                    <a href="{{ route('master-data.kategori.destroy', $item->id) }}" data-confirm-delete="true" class="btn btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
                             </div>
                         </td>
                     </tr>
