@@ -31,9 +31,9 @@ class Aside extends Component
                     "route_name" => "master-data.kategori.index",
                     ],
                     [
-                        "label" => "Route Test",
-                        "route_active" => "master-data.kategori.*",
-                        "route_name" => "master-data.kategori.index",
+                    "label" => "Product",
+                    "route_active" => "master-data.product.*",
+                    "route_name" => "master-data.product.index",
                     ],
                 ]
             ]
