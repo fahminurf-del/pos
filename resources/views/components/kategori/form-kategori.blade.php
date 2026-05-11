@@ -3,7 +3,7 @@
                   {{ $id ? 'Edit' : 'Kategori Baru' }}
     </button>
     <div class="modal fade" id="formKategori{{ $id ?? '' }}">
-        <form action="">
+        <form action="{{ route('master-data.kategori.store') }}" method="POST">
             @csrf
             <input type="hidden" name="id" value="{{ $id ?? ''}}">
         <div class="modal-dialog">
