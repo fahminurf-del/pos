@@ -17,7 +17,7 @@
         <div class="d-flex justify-content-end mb-2">
             <x-kategori.form-kategori />
         </div>
-        <table class="table table-sm table-responsive" id="table1">
+        <table class="table table-sm" id="table1">
             <thead>
                 <tr>
                     <th>No</th>
@@ -35,7 +35,7 @@
                         <td>
                             <div class="d-flex align-items-center">
                                 <x-kategori.form-kategori :id="$item->id" />
-                                    <a href="{{ route('master-data.kategori.destroy', $item->id) }}" data-confirm-delete="true" class="btn btn-danger">
+                                    <a href="{{ route('master-data.kategori.destroy', $item->id) }}" data-confirm-delete="true" class="btn btn-danger mx-1">
                                         <i class="fas fa-trash"></i>
                                     </a>
                             </div>
