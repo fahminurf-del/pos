@@ -1,6 +1,10 @@
 <div>
-    <button type="button" class="btn {{ $id ? 'btn-default' : 'btn-primary' }}" data-toggle="modal" data-target="#formKategori{{ $id ?? '' }}">
-                  {{ $id ? 'Edit' : 'Kategori Baru' }}
+    <button type="button" class="btn {{ $id ? 'btn-warning' : 'btn-primary' }}" data-toggle="modal" data-target="#formKategori{{ $id ?? '' }}">
+        @if ($id)
+          <i class="fas fa-edit"></i>
+        @else
+          Kategori Baru
+        @endif
     </button>
     <div class="modal fade" id="formKategori{{ $id ?? '' }}">
         <form action="{{ route('master-data.kategori.store') }}" method="POST">
