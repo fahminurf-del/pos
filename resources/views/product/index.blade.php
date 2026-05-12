@@ -7,6 +7,10 @@
         <h4 class="card-header">Data Produk</h4>
     </div>
     <div class="card-body">
+        <div class="d-flex justify-content-end mb-2">
+            <x-product.form-product />
+        </div>
+        <x-alert :errors="$errors"/>
         <table class="table table-sm" id="table2">
             <thead>
                 <tr>
@@ -23,14 +27,25 @@
             <tbody>
                 @foreach ($products as $index => $product )
                    <tr>
-                    <td>{{ index + 1 }}</td>
+                    <td>{{ $index + 1 }}</td>
                     <td>{{ $product->sku }}</td>
-                    <td>{{ $product->nama_product }}</td>
+                    <td>{{ $product->nama_produk }}</td>
                     <td>Rp. {{ number_format($product->harga_jual) }}</td>
                     <td>Rp. {{ number_format($product->harga_beli_pokok) }}</td>
-                    <td>{{ nuber_format($product->stok) }}</td>
-                    <td>{{ $product->is_active }}</td>
-                    <td></td>
+                    <td>{{ number_format($product->stok) }}</td>
+                    <td>
+                        <p class="badge {{ $product->is_active ? 'badge-success' : 'badge-danger' }}">
+                            {{ $product->is_active ? 'Aktif' : 'Tidak Aktif' }}
+                        </p>
+                    </td>
+                    <td>
+                        <div class="d-flex algin-items-center">
+                         <x-product.form-product :id="$product->id" />
+                            <a href="{{ route('master-data.product.destroy', $product->id) }}" class="btn btn-danger mx-1" data-confirm-delete="true">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </td>
                    </tr> 
                 @endforeach
             </tbody>
