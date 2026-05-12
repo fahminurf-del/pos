@@ -8,7 +8,7 @@ use Illuminate\View\Component;
 
 class Aside extends Component
 {
-    public $routes;
+    public array $routes;
     public function __construct()
     {
         $this->routes = [
