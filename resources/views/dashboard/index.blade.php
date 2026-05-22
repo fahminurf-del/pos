@@ -3,7 +3,7 @@
 @section('content')
 <div class="body">
     <div class="card-body">
-        Welcome to POS Application, <strong class="capitalize">{{ auth()->user()->name }}</strong>
+        Welcome, <strong class="capitalize">{{ auth()->user()->name }}</strong>
     </div>
 </div>
 @endsection
