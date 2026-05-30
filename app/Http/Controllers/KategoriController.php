@@ -21,7 +21,7 @@ class KategoriController extends Controller
         $id = $request->id;
         $request->validate([
                 'nama_kategori' => 'required|unique:kategoris,nama_kategori,' . $id,
-                'deskripsi' => 'required|max:100|min:10'
+                'deskripsi' => 'required|max:250|min:10'
             ], [
                 'nama_kategori.required' => 'Nama kategori harus diisi',
                 'nama_kategori.unique' => 'Nama kategori sudah ada',
