@@ -26,7 +26,7 @@ class KategoriController extends Controller
                 'nama_kategori.required' => 'Nama kategori harus diisi',
                 'nama_kategori.unique' => 'Nama kategori sudah ada',
                 'deskripsi.required' => 'Deskripsi harus diisi',
-                'deskripsi.max' => 'Deskripsi maksimal 100 karakter',
+                'deskripsi.max' => 'Deskripsi maksimal 250 karakter',
                 'deskripsi.min' => 'Deskripsi minimal 10 karakter',
             ]);
         
