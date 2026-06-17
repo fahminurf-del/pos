@@ -26,8 +26,11 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->name }}</td>
                         <td>
-                            <div>
+                            <div class="d-flex align-items-center">
                                 <x-user.form-user :id="$user->id" />
+                                    <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-danger mx-1" data-confirm-delete="true">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
                             </div>
                         </td>
                     </tr>
