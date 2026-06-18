@@ -76,4 +76,16 @@ class UserController extends Controller
         toast()->success('User berhasil dihapus');
         return redirect()->route('users.index');
     }
+    public function resetPassword(Request $request)
+    {
+       $request->validate([
+            'id' => 'required'
+            ]);
+        $user = User::find($request->id);
+        $user->update([
+            'password' => Hash::make('12345678')
+        ]);
+        toast()->success('Password berhasil direset');
+        return redirect()->route('users.index');
+    }
 }
