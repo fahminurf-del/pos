@@ -43,6 +43,13 @@ class Aside extends Component
                     "route_name" => "master-data.product.index",
                     ],
                 ]
+            ],
+            [
+                "label" => "Penerimaan Barang",
+                "icon" => "fas fa-boxes",
+                "route_active" => "penerimaan-barang.*",
+                "route_name" => "penerimaan-barang.index",
+                "is_dropdown" => false,
             ]
         ];
     }
