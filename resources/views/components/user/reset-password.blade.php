@@ -2,12 +2,13 @@
     <!-- Button trigger modal -->
 <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#formResetPassword{{ $id }}">
   <i class="fas fa-lock-open"></i>
-  Reset Password
 </button>
 
 <!-- Modal -->
 <div class="modal fade" id="formResetPassword{{ $id }}" tabindex="-1" aria-labelledby="formResetPasswordLabel{{ $id }}" aria-hidden="true">
-  <form action="{{ route('users.reset-password', $id) }}" method="POST">
+  <form action="{{ route('users.reset-password') }}" method="POST">
+    @csrf
+    <input type="hidden" name="id" value="{{ $id }}">
     <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -17,7 +18,7 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <p>Mereset password akan mengubahnya menjadi password default <strong>12345678</strong></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
