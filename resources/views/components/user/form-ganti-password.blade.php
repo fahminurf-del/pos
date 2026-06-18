@@ -1,13 +1,13 @@
 <div>
     <!-- Button trigger modal -->
 <!-- Modal -->
-<div class="modal fade" id="formGantiPassword" tabindex="-1" aria-labelledby="formGantiPasswordLabel" aria-hidden="true">
-<form action="{{ route('users.ganti-password') }}" method="POST">
+<div class="modal fade" id="formResetPassword" tabindex="-1" aria-labelledby="formResetPasswordLabel" aria-hidden="true">
+<form action="{{ route('users.reset-password') }}" method="POST">
     @csrf
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="formGantiPasswordLabel">Ganti Password</h5>
+        <h5 class="modal-title" id="formResetPasswordLabel">Reset Password</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
