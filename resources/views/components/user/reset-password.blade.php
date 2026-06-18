@@ -1,6 +1,7 @@
 <div>
     <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formResetPassword{{ $id }}">
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#formResetPassword{{ $id }}">
+  <i class="fas fa-lock-open"></i>
   Reset Password
 </button>
 
