@@ -31,6 +31,7 @@
                                     <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-danger mx-1" data-confirm-delete="true">
                                         <i class="fas fa-trash"></i>
                                     </a>
+                                <x-user.reset-password :id="$user->id" />
                             </div>
                         </td>
                     </tr>
