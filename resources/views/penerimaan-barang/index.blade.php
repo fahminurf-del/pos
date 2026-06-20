@@ -8,6 +8,7 @@
     <div class="card-body">
     <div class="d-flex">
         <select name="select2" id="select2" class="form-control">
+            <input type="number" name="current_stok" id="current_stok" class="form-control mx-1" style="width: 100px;" readonly>
         </select>
     </div>
     </div>
@@ -46,6 +47,21 @@
         },
         minimumInputLength:3
     })
+    $("#select2").on("change", function (e) {
+        let id = $(this).val();
+        
+        $.ajax({
+            type: "GET",
+            url: "{{ route('get-data.cek-stok') }}",
+            data: {
+                id: id
+            },
+            datatype: "json",
+            success: function (response) {
+                $("#current_stok").val(response);
+                }
+            });
+        });
     });
 </script>
 @endpush
