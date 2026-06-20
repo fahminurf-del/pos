@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function(){
 
 Route::prefix('get-data')->as('get-data.')->group(function () {
     Route::get('/product', [ProductController::class,'getData'])->name('product');
+    Route::get('/cek-stok-product', [ProductController::class,'cekStok'])->name('cek-stok');
     });
 
 
