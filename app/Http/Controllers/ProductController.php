@@ -71,4 +71,9 @@ class ProductController extends Controller
         $product = $query->where('nama_produk', 'like', '%'. $search .'%')->get();
         return response()->json($product);
     }
+    public function cekStok() {
+        $id = request()->query('id');
+        $stok = Product::find($id)->stok;
+        return response()->json($stok);
+    }
 }
