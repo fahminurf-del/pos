@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function store(Request $request){
         $id = $request->id;
         $request->validate([
-            'nama_product'     => 'required|unique:products,nama_produk,'.$id,
+            'nama_produk'     => 'required|unique:products,nama_produk,'.$id,
             'harga_jual'       => 'required|numeric|min:0',
             'harga_beli_pokok' => 'required|numeric|min:0',
             'kategori_id'      => 'required|exists:kategoris,id',
@@ -24,8 +24,8 @@ class ProductController extends Controller
             'stok_minimal'     => 'required|numeric|min:0',
 
         ],[
-            'nama_product.reqiured'     => 'Nama produk harus diisi',
-            'nama_product.unique'       => 'Nama produk sudah ada',
+            'nama_produk.required'     => 'Nama produk harus diisi',
+            'nama_produk.unique'       => 'Nama produk sudah ada',
             'harga_jual.required'       => 'Harga jual harus diisi',
             'harga_jual.numeric'        => 'Harga jual harus berupa angka',
             'harga_jual.min'            => 'Harga jual minimal adalah 0',
@@ -39,7 +39,7 @@ class ProductController extends Controller
         ]);
         $newRequest = [
             'id' => $id,
-            'nama_produk' => $request->nama_product,
+            'nama_produk' => $request->nama_produk,
             'harga_jual' => $request->harga_jual,
             'harga_beli_pokok' => $request->harga_beli_pokok,
             'kategori_id' => $request->kategori_id,
