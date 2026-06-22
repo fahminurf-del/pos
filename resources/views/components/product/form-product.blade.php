@@ -21,7 +21,7 @@
             <div class="modal-body">
               <div class="form-group my-1">
                 <label for="">Nama Produk</label>
-                <input type="text" name="nama_product" id="nama_product" class="form-control" value="{{ $id ? $nama_product : old('nama_product') }}">
+                <input type="text" name="nama_produk" id="nama_produk" class="form-control" value="{{ $id ? $nama_produk : old('nama_produk') }}">
               </div>
               <div class="form-group my-1">
                 <label for="">Kategori Produk</label>
