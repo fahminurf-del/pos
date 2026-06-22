@@ -19,8 +19,8 @@ Route::middleware('auth')->group(function(){
     Route::post('/logout', [LoginController::class,'logout'])->name('logout');
 
 Route::prefix('get-data')->as('get-data.')->group(function () {
-    Route::get('/product', [ProductController::class,'getData'])->name('product');
-    Route::get('/cek-stok-product', [ProductController::class,'cekStok'])->name('cek-stok');
+    Route::get('/produk', [ProductController::class,'getData'])->name('produk');
+    Route::get('/cek-stok-produk', [ProductController::class,'cekStok'])->name('cek-stok');
     });
 
 
